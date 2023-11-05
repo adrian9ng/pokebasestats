@@ -16,7 +16,7 @@ function SearchBar(props){
 
       <input
         type="text"
-        placeholder="Enter a Pokémon or its Pokédex number"
+        placeholder="Enter a Pokémon or Pokédex number"
         onChange={(e) => {setTerm(e.target.value)}}
       />
       <button onClick={search}>Search</button>

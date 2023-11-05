@@ -1,4 +1,5 @@
 import SearchBar from "../searchbar/SearchBar";
+import PokemonCard from "../pokemoncard/PokemonCard";
 import "./reset.css";
 import './App.css';
 import { useState } from "react";
@@ -9,6 +10,8 @@ function App() {
 
   const [stats, setStats] = useState({hp: 0, attack: 0, defence: 0, spAttack: 0, spDefence: 0, speed: 0}); //{hp: 0, attack: 0, defence: 0, spAttack: 0, spDefence: 0, speed: 0}
   const [name, setName] = useState("");
+  const [id, setId] = useState(0);
+  const [sprite, setSprite] = useState(0);
 
   async function search(term){
     const response = await fetch(url + term + "/");
@@ -16,9 +19,11 @@ function App() {
     console.log(jsonResponse);
     console.log(jsonResponse.stats);
     console.log(jsonResponse.name);
+    console.log(jsonResponse.id);
 
     await setName(jsonResponse.name)
-
+    await setId(jsonResponse.id)
+    await setSprite(jsonResponse.sprites.front_default)
     await setStats({
               hp: jsonResponse.stats[0].base_stat,
               attack: jsonResponse.stats[1].base_stat,
@@ -26,7 +31,7 @@ function App() {
               spAttack: jsonResponse.stats[3].base_stat,
               spDefence: jsonResponse.stats[4].base_stat,
               speed: jsonResponse.stats[5].base_stat
-            });
+            }); 
     await console.log(stats);
   }
 
@@ -43,10 +48,7 @@ function App() {
           <SearchBar onSearch={search}/>
         </div>
         <div className="pokemonSection">
-          <div className="pokemonSide">
-            <h2>{name.toUpperCase()}</h2>
-          </div>
-          <div className="statSide"></div>
+            <PokemonCard name={name} id={id} sprite={sprite} stats={stats}/>
         </div>
       </body>
     </div>

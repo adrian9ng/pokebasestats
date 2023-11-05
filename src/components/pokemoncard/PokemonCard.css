@@ -1,0 +1,15 @@
+.card{
+    background-color: red;
+    display: flex;
+    flex-flow: column;
+    padding: 20px;
+    margin: 40px;
+    border-radius: 10px;
+    width: 90%;
+    text-align: center;
+}
+
+.spr img {
+    background-color: green;
+    width: 250px;
+}

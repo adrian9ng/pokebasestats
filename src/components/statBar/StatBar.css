@@ -1,0 +1,24 @@
+.statBar{
+    display: inline-flex;
+}
+
+.statNameContainer{
+    border: 1px solid white;
+    width: 30%
+}
+
+.barContainer{
+    border: 1px solid white;
+    width: 60%;
+}
+
+.numberContainer{
+    border: 1px solid white;
+    width: 10%;
+}
+
+.bar{
+    /* left: 0; */
+    background-color: blue;
+    height: 100%;
+}
