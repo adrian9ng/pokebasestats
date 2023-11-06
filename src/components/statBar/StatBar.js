@@ -12,7 +12,6 @@ function StatBar(props){
         
         <div className="barContainer">
             <div className="bar" style={{width: `${props.stat / 255 * 100}%`}}></div> 
-            {/* stat/255 * 100 for % */}
         </div>
 
         <div className="numberContainer">

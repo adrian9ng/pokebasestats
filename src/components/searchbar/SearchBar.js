@@ -8,7 +8,7 @@ function SearchBar(props){
   const search = () => {
     console.log(term)
     console.log("button pressed");
-    props.onSearch(term);
+    props.onSearch(term.toLowerCase().replace(" ", "-"));
   }
     
   return(
