@@ -40,7 +40,7 @@ input:focus{
 }
 
 button{
-    background-color: white;
+    background-color: rgb(255, 117, 24);
     border-radius: 10px;
     padding: 0 20px;
     margin: 0 10px;
@@ -50,11 +50,11 @@ button{
 }
 
 button:hover{
-    background-color: lightgrey;
+    background-color: rgb(228, 91, 0);
 }
 
 button:active{
-    background-color: grey;
+    background-color: rgb(194, 78, 0);
 }
 
 p{
@@ -74,5 +74,28 @@ p{
     .fullSearchDiv{
         display: flex;
         justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 594px) {
+    .searchBar{
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    input{
+        width: 85%;
+        margin: 0;
+        align-self: center;
+    }
+    button{
+        width: 85%;
+        align-self: center;
+        margin: 10px 0;
+        border-radius: 10px;
+        text-align: center;
+        background-color: rgb(255, 117, 24);
+        height: 35px;
     }
   }
