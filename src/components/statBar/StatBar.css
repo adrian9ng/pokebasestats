@@ -14,7 +14,7 @@ h3{
 
 .statNameContainer{
     border: 1px solid white;
-    width: 30%;
+    width: 35%;
     font-size: 12px;
     text-align: center;
     padding-top: 4px;
@@ -23,12 +23,12 @@ h3{
 
 .barContainer{
     border: 1px solid white;
-    width: 60%;
+    width: 50%;
 }
 
 .numberContainer{
     border: 1px solid white;
-    width: 10%;
+    width: 15%;
     color: white;
     font-size: 12px;
     padding-top: 3px;

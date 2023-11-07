@@ -18,11 +18,6 @@ function App() {
     try{
       const response = await fetch(url + term + "/");
       const jsonResponse = await response.json();
-      console.log("full response: " + response);
-      console.log(jsonResponse);
-      console.log(jsonResponse.stats);
-      console.log(jsonResponse.name);
-      console.log(jsonResponse.id);
 
       await setName(jsonResponse.name)
       await setId(jsonResponse.id)
@@ -35,7 +30,6 @@ function App() {
                 spDefence: jsonResponse.stats[4].base_stat,
                 speed: jsonResponse.stats[5].base_stat
               }); 
-      await console.log(stats);
       setValidSearch(true);
     }
     catch{
@@ -46,7 +40,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <h1>Poké Base Stats</h1> */}
         <h1>POKÉ BASE STATS</h1>
       </header>
       <body>
