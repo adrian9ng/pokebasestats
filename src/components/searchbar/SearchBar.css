@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@font-face {
+    font-family: "Nexa-ExtraLight";
+    src: url(../../fonts/Nexa-ExtraLight.ttf) format('truetype');
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+.fullSearchDiv{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
 .searchBar{
     width: 100%;
     display: flex;
@@ -11,10 +28,14 @@ input{
     padding: 10px;
     border-radius: 10px;
     margin: 0 10px;
+    font-family: 'Nexa-ExtraLight', sans-serif;
+    margin-left: 40px;
+    text-align: left;
+    font-weight: bold;
 }
 
 input:focus{
-    border: 2px red solid;
+    border: 2px rgb(255, 117, 24) solid;
     padding: 8px;
 }
 
@@ -23,6 +44,9 @@ button{
     border-radius: 10px;
     padding: 0 20px;
     margin: 0 10px;
+    font-family: 'Nexa-ExtraLight', sans-serif;
+    font-weight: bold;
+    margin-right: 40px;
 }
 
 button:hover{
@@ -32,3 +56,17 @@ button:hover{
 button:active{
     background-color: grey;
 }
+
+p{
+    color: red;
+    font-size: 20px;
+    font-family: 'Nexa-ExtraLight', sans-serif;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+@media only screen and (min-width: 768px) {
+    .searchBar{
+      max-width: 62%;
+    }
+  }

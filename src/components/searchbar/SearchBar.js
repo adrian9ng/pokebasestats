@@ -11,18 +11,37 @@ function SearchBar(props){
     props.onSearch(term.toLowerCase().replace(" ", "-"));
   }
     
-  return(
-    <div className="searchBar">
+  if(props.isValidSearch === false){
+    return(
+      <div className="fullSearchDiv">
 
-      <input
-        type="text"
-        placeholder="Enter a Pokémon or Pokédex number"
-        onChange={(e) => {setTerm(e.target.value)}}
-      />
-      <button onClick={search}>Search</button>
+        <div className="searchBar">
+          <input
+            type="text"
+            placeholder="Enter a Pokémon or Pokédex number"
+            onChange={(e) => {setTerm(e.target.value)}}
+          />
+          <button onClick={search}>Search</button>
+        </div> 
 
-    </div> 
-  )
+        <p>Pokémon name or number is invalid</p>
+
+      </div>
+      
+    )
+  } else {
+    return(
+      <div className="searchBar">
+        <input
+          type="text"
+          placeholder="Enter a Pokémon or Pokédex number"
+          onChange={(e) => {setTerm(e.target.value)}}
+        />
+        <button onClick={search}>Search</button>
+      </div> 
+    )
+  }
+  
 }
 
 export default SearchBar

@@ -12,40 +12,46 @@ function App() {
   const [name, setName] = useState("");
   const [id, setId] = useState(0);
   const [sprite, setSprite] = useState(0);
+  const [validSearch, setValidSearch] = useState(true);
 
   async function search(term){
-    const response = await fetch(url + term + "/");
-    const jsonResponse = await response.json();
-    console.log(jsonResponse);
-    console.log(jsonResponse.stats);
-    console.log(jsonResponse.name);
-    console.log(jsonResponse.id);
+    try{
+      const response = await fetch(url + term + "/");
+      const jsonResponse = await response.json();
+      console.log("full response: " + response);
+      console.log(jsonResponse);
+      console.log(jsonResponse.stats);
+      console.log(jsonResponse.name);
+      console.log(jsonResponse.id);
 
-    await setName(jsonResponse.name)
-    await setId(jsonResponse.id)
-    await setSprite(jsonResponse.sprites.front_default)
-    await setStats({
-              hp: jsonResponse.stats[0].base_stat,
-              attack: jsonResponse.stats[1].base_stat,
-              defence: jsonResponse.stats[2].base_stat,
-              spAttack: jsonResponse.stats[3].base_stat,
-              spDefence: jsonResponse.stats[4].base_stat,
-              speed: jsonResponse.stats[5].base_stat
-            }); 
-    await console.log(stats);
+      await setName(jsonResponse.name)
+      await setId(jsonResponse.id)
+      await setSprite(jsonResponse.sprites.front_default)
+      await setStats({
+                hp: jsonResponse.stats[0].base_stat,
+                attack: jsonResponse.stats[1].base_stat,
+                defence: jsonResponse.stats[2].base_stat,
+                spAttack: jsonResponse.stats[3].base_stat,
+                spDefence: jsonResponse.stats[4].base_stat,
+                speed: jsonResponse.stats[5].base_stat
+              }); 
+      await console.log(stats);
+      setValidSearch(true);
+    }
+    catch{
+      setValidSearch(false);
+    }  
   }
-
-
-
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Poké Base Stats</h1>
+        {/* <h1>Poké Base Stats</h1> */}
+        <h1>POKÉ BASE STATS</h1>
       </header>
       <body>
         <div className="searchbar">
-          <SearchBar onSearch={search}/>
+          <SearchBar onSearch={search} isValidSearch={validSearch}/>
         </div>
         <div className="pokemonSection">
             <PokemonCard name={name} id={id} sprite={sprite} stats={stats}/>

@@ -1,18 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@font-face {
+  font-family: "Nexa-Heavy";
+  src: url(../../fonts/Nexa-Heavy.ttf) format('truetype');
+}
 
 html{
-  background-color: rgb(27, 27, 27);
+  background-color: #1b1b1b;
 }
 
 h1{
   color: white;
-  font-family: 'Roboto', sans-serif;
-  font-size: 80px;
+  font-family: 'Nexa-Heavy', sans-serif;
+  font-size: 100px;
+  line-height: 1;
 }
 
 header{
   text-align: center;
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 50px;
 }
 
