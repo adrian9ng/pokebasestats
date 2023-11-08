@@ -7,7 +7,7 @@ function PokemonCard(props){
     if(props.id){
         return (
             <div className="card">
-                <h2>{props.name.toUpperCase()} #{props.id}</h2>
+                <h2 className="pokemonNameNum">{props.name.toUpperCase()} #{props.id}</h2>
                 <div className="spr">
                     <img src={props.sprite} alt="Sprite of pokémon"/>
                 </div>
